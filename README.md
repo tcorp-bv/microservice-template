@@ -8,7 +8,7 @@ One of our core principles is to offload most middleware to Istio.
 
 Generally speaking, your service should be defined in grpc (and not in json). This repository will help you get started with that.
 
-Transcoding to json [can still be done by Istio](https://github.com/tetratelabs/istio-tools/tree/master/grpc-transcoder) in our middleware layer. The manifests for this should be located at the consuming services, not the service itself. This means that when you are writing a service within TCorp, you are not responsible for maintaining a json API, only the grpc interface.
+Transcoding to json [can still be done by Istio](https://github.com/tetratelabs/istio-tools/tree/master/grpc-transcoder) in our middleware layer. The manifests for this should be located at the consuming services, not the service itself. This means that when you are writing a service within TCorp, you are not responsible for maintaining a json API, only the grpc interface. This means that the `annotations.proto` import and `google.api.http` options can be removed from greeter.proto within the actual service and are only relevant for the consuming service.
 
 ## Repository
 The server is defined in [main.go](main.go), an example client is defined under [client/main.go](client/main.go)
