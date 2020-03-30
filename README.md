@@ -5,9 +5,10 @@ Get started developing microservices on our service mesh with our new protobuf r
 Within TCorp, we work hard to develop a maintainable service mesh.
 
 One of our core principles is to offload most middleware to Istio.
-Your service is defined using protocolbuffers over grpc. Transcoding to json [can be done by istio](https://github.com/tetratelabs/istio-tools/tree/master/grpc-transcoder).
 
-This repository is as an example microservice.
+Generally speaking, your service should be defined in grpc (and not in json). This repository will help you get started with that.
+
+Transcoding to json [can still be done by Istio](https://github.com/tetratelabs/istio-tools/tree/master/grpc-transcoder) in our middleware layer.
 
 ## Repository
 The server is defined in [main.go](main.go), an example client is defined under [client/main.go](client/main.go)
